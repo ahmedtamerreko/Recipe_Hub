@@ -1,0 +1,46 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Dashboard</title>
+    <link rel="stylesheet" href="{% static 'Css/adminDashboard.css' %}">
+</head>
+<body>
+
+    <div class="form">
+        <h2>Admin Dashboard</h2>
+
+        <input type="hidden" id="recipe-id">
+
+        <img id="preview-image" src="{% static 'Image/default.jpg' %}" alt="Recipe Image">
+
+        <label for="recipe-name">Recipe Name:</label>
+        <input type="text" id="recipe-name" placeholder="Enter Recipe Name">
+        
+        <label for="recipe-category">Category:</label>
+        <select id="recipe-category">
+            <option value="Main Course">Main Course</option>
+            <option value="Appetizers">Appetizers</option>
+            <option value="Desserts">Desserts</option>
+        </select>
+
+        <label for="recipe-description">Description:</label>
+        <textarea id="recipe-description" placeholder="Enter Description"></textarea>
+
+        <label for="recipe-image">Upload Image:</label>
+        <input type="file" id="recipe-image" accept="image/*">
+
+        <input type="submit" id="save-recipe" value="Save Recipe">
+    </div>
+
+    <h2>Saved Recipes</h2>
+    <ul id="admin-recipe-list"></ul>
+
+    <button id="sign-out-button">Sign Out</button>
+
+    <script src="{% static 'Js/adminDashboard.js' %}"></script>
+</body>
+</html>

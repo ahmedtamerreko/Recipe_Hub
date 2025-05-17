@@ -1,0 +1,23 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recipe Details</title>
+    <link rel="stylesheet" href="{% static 'Css/recipeDetails.css' %}">
+</head>
+<body>
+
+    <section id="recipe-details">
+        <img id="recipe-image" src="{% static 'images/default.jpg' %}" alt="Recipe Image">
+        <h1 id="recipe-name">Recipe Name</h1>
+        <h3 id="recipe-category">Category</h3>
+        <p id="recipe-description">Description of the recipe goes here. This will include ingredients and steps.</p>
+        <a href="UserDashboard.html">⬅ Back to Recipes</a>
+    </section>
+
+    <script src="{% static 'Js/recipeDetails.js' %}"></script>
+</body>
+</html>

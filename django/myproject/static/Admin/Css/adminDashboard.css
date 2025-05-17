@@ -1,0 +1,116 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(234, 209, 209);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.form {
+    background-color: rgb(243, 175, 175);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    width: 320px;
+}
+
+.form img {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+}
+
+label {
+    font-weight: bold;
+    display: block;
+    margin-top: 10px;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 9px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 14px;
+}
+
+textarea {
+    resize: none;
+    height: 60px;
+}
+
+input[type="submit"] {
+    background-color: #ad5e5e;
+    color: white;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+input[type="submit"]:hover {
+    background-color: #631010;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    width: 320px;
+}
+
+li {
+    background-color: rgb(243, 175, 175);     padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 10px;     display: flex;
+    align-items: center;
+    gap: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);     cursor: pointer;
+}
+
+li img {
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+}
+
+li button {
+    margin-left: auto;
+    padding: 5px;
+    border: none;
+    background-color: #ad5e5e;
+    color: white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+li button:hover {
+    background-color: #631010;
+}
+
+#sign-out-button {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #f44336; 
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#sign-out-button:hover {
+    background-color: #d32f2f; 
+}
+
+#sign-out-button:focus {
+    outline: none;
+}
