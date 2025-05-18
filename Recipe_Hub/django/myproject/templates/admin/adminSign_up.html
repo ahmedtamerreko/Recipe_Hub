@@ -1,0 +1,43 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Admin Sign-Up</title>
+    <link rel="stylesheet" href="{% static 'Css/adminSign-up.css' %}" />
+</head>
+<body>
+    <div class="form">
+        <img src="{% static 'images/admin.jpg' %}" alt="Chef Master" />
+        <form id="signupForm" method="post" action="{% url 'adminSignup' %}">
+            {% csrf_token %}
+            
+            <label for="username">Username</label><br />
+            <input type="text" id="username" name="username" required /><br />
+
+            <label for="password">Password</label><br />
+            <input type="password" id="password" name="password" required /><br />
+
+            <label for="confirm_password">Confirm Password</label><br />
+            <input type="password" id="confirm_password" name="confirm_password" required /><br />
+
+            <label for="email">Email</label><br />
+            <input type="email" id="email" name="email" required /><br />
+
+            <label>Are you an admin?</label><br />
+            <label>
+                <input type="radio" id="yes" name="is_admin" value="yes" required /> Yes
+            </label>
+            <label>
+                <input type="radio" id="no" name="is_admin" value="no" /> No
+            </label><br />
+
+            <input type="submit" value="Sign Up" />
+        </form>
+    </div>
+
+    <script src="{% static 'Js/adminSign-Up.js' %}"></script>
+</body>
+</html>
