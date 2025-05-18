@@ -41,7 +41,7 @@ def user_signup(request):
         )
         data.save()
         messages.success(request, "Account created successfully.")
-        return redirect('login')  
+        return redirect('user_signin')  
     return render(request, 'user/UserSign-Up.html')
 
             
@@ -61,11 +61,10 @@ def adminDashboard(request):
 
 def adminSign_in(request):
     if request.method == 'POST':
-        email = request.POST.get('email')
+        name = request.POST.get('name')
         password = request.POST.get('password')
-
         try:
-            admin = AdminData.objects.get(email=email, password=password)
+            admin = AdminData.objects.get(name=name, password=password)
             messages.success(request, "Login successful.")
             return redirect('adminDashboard')  
         except AdminData.DoesNotExist:
