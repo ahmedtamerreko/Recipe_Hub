@@ -1,0 +1,22 @@
+{% load static %}
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href= "{% static 'Css/adminOrUser.css' %}">
+    
+</head>
+<body>
+   <div>
+    Are You Admin Or User?<br>
+    <a href="{% url 'adminSign_in' %}"><button class="Admin">Admin</button></a>
+    <a href="{% url 'user_signin' %}"><button class="User">User</button></a>
+    </div>
+
+    <script src="{% static 'Js/adminOrUser.js' %}"></script>
+
+</body>
+</html>
