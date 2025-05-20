@@ -1,0 +1,95 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>User Dashboard</title>
+    <link rel="stylesheet" href="{% static 'Css/UserDashboard.css' %}" />
+    <style>
+        .recipe-card-container {
+            position: relative;
+        }
+        
+        .recipe-card-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: inherit;
+            padding: 15px;
+            flex-grow: 1;
+        }
+        
+        .recipe-actions {
+            margin-left: auto;
+            padding-left: 15px;
+        }
+
+        #recipe-list > li {
+            padding: 0;
+            position: relative;
+        }
+
+        .favorite-star {
+            font-size: 24px;
+            cursor: pointer;
+            color: #ffcc00;
+        }
+
+        .favorite-star.inactive {
+            color: #ccc;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <img src="{% static 'images/default.jpg' %}" alt="RecipeHub Logo" />
+            </div>
+            <nav>
+                <a id="Home" href="{% url 'user_dashboard' %}">HOME</a>
+
+                <label for="category-filter">Filter by Category:</label>
+                <select id="category-filter">
+                    <option value="All">All</option>
+                    <option value="Main Course">Main Course</option>
+                    <option value="Appetizers">Appetizers</option>
+                    <option value="Desserts">Desserts</option>
+                </select>
+
+                <a href="{% url 'user_fav' %}">Favourites</a>
+
+                <div class="search-container">
+                    <input class="inputsearch" type="text" placeholder="search recipes" />
+                    <button class="search">
+                        <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <circle cx="11" cy="11" r="8"></circle>
+                            <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+                        </svg>
+                    </button>
+                </div>
+
+                <form action="{% url 'user_signout' %}" method="post" style="display: inline;">
+                    {% csrf_token %}
+                    <button type="submit" class="sign-out">Sign out</button>
+                </form>
+            </nav>
+        </div>
+    </header>
+
+    <main id="main-container">
+        <section class="title-bar">
+            <h2>Available Recipes</h2>
+        </section>
+
+        <ul id="recipe-list">
+            
+        </ul>
+        
+
+    </main>
+
+    <script src="{% static 'Js/UserDashboard.js' %}"></script>
+</body>
+</html>
