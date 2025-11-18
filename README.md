@@ -14,7 +14,10 @@ It includes user registration using Django Models, Forms, and Views.
 
 # Technologies Used
 1-Python 3
+
 2-Django Framework
+
 3-HTML / CSS / JavaScript
+
 4-SQLite (default Django DB)
 
